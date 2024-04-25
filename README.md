@@ -18,7 +18,7 @@ Une application qui réunie les fans de basket autour de la balle orange.
 - Gérer les terrains
 - Gérer le compte
 
-\*Gérer fait réference à Lire, Ajouter, Modifier et Supprimer (CRUD).
+**Gérer** fait réference à Lire, Ajouter, Modifier et Supprimer (CRUD).
 
 ## Technologie utilisées
 
