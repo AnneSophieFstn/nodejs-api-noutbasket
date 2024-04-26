@@ -26,6 +26,10 @@ Une application qui réunie les fans de basket autour de la balle orange.
 
 - Node Js
 
+### Déploiement
+
+- Render
+
 ### **Frontend:**
 
 - React (Application Web)
