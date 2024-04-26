@@ -1,5 +1,5 @@
-const { createMatch } = require("../controller/match.controller.js");
-const Match = require("../model/match.model.js");
+import { createMatch } from "../controller/match.controller.js";
+import Match from "../model/match.model.js";
 
 jest.mock("../model/match.model.js");
 

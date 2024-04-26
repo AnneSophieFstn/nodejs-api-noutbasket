@@ -1,7 +1,7 @@
-const { signIn } = require("../middleware/authentification.js");
-const UserModel = require("../model/user.model.js");
-const bcrypt = require("bcrypt");
-const jwt = require("jsonwebtoken");
+import { signIn } from "../middleware/authentification.js";
+import UserModel from "../model/user.model.js";
+import bcrypt from "bcrypt";
+import jwt from "jsonwebtoken";
 
 jest.mock("bcrypt");
 jest.mock("jsonwebtoken");
