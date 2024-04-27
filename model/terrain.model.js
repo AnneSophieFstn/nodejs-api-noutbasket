@@ -1,7 +1,7 @@
 import { DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
-const Terrain = sequelize.define("Terrains", {
+const Terrain = sequelize.define("terrains", {
   id: {
     type: DataTypes.INTEGER,
     autoIncrement: true,

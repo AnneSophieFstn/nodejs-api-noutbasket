@@ -2,7 +2,7 @@ import { Sequelize, DataTypes } from "sequelize";
 import sequelize from "../database/database.js";
 
 const Match = sequelize.define(
-  "Matchs",
+  "matchs",
   {
     id: {
       type: DataTypes.INTEGER,
