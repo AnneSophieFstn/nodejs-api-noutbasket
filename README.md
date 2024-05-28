@@ -6,9 +6,8 @@ Une application qui réunie les fans de basket autour de la balle orange.
 
 ## Version de l'application
 
-- **DESKTOP** **(Administrateurs)**
-- **MOBILE** **(Administrateurs, Utilisateurs)**
-- **WEB** **(Administrateurs, Utilisateurs)**
+- [**MOBILE - Repo GITHUB**](https://github.com/AnneSophieFstn/react-native-noutbasket)
+- [**WEB - Repo GITHUB**](https://github.com/AnneSophieFstn/reactjs-noutbasket)
 
 ## Fonctionnalités
 
@@ -32,7 +31,7 @@ Une application qui réunie les fans de basket autour de la balle orange.
 
 ### Base de données
 
-- Filess.io
+- Freedb.tech
 
 ### **Frontend:**
 
