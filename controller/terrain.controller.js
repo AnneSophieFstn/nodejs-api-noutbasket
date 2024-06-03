@@ -135,7 +135,7 @@ async function updateTerrain(req, res) {
 }
 async function deleteTerrain(req, res) {
   try {
-    const deleteTerrain = Terrain.destroy({
+    const deleteTerrain = await Terrain.destroy({
       where: { id: req.params.id },
     });
 
