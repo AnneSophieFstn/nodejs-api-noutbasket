@@ -9,6 +9,7 @@ import {
   deleteUser,
 } from "../controller/user.controller.js";
 import multer from "multer";
+import { verifyToken } from "../middleware/authentification.js";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -24,10 +25,15 @@ const UserRoutes = express.Router();
 
 UserRoutes.get("/users", getAllUser);
 UserRoutes.get("/users/:id", getOneUser);
-UserRoutes.post("/users", createUser);
-UserRoutes.put("/users/:id", updateUser);
-UserRoutes.put("/users/:id/images", upload.single("image"), updateImgUser);
-UserRoutes.put("/users/:id/password", updatePassword);
-UserRoutes.delete("/users/:id", deleteUser);
+UserRoutes.post("/users", verifyToken, createUser);
+UserRoutes.put("/users/:id", verifyToken, updateUser);
+UserRoutes.put(
+  "/users/:id/images",
+  upload.single("image"),
+  verifyToken,
+  updateImgUser
+);
+UserRoutes.put("/users/:id/password", verifyToken, updatePassword);
+UserRoutes.delete("/users/:id", verifyToken, deleteUser);
 
 export default UserRoutes;

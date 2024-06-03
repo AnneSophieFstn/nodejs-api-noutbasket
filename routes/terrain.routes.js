@@ -8,6 +8,7 @@ import {
 } from "../controller/terrain.controller.js";
 import express from "express";
 import multer from "multer";
+import { verifyToken } from "../middleware/authentification.js";
 
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
@@ -25,8 +26,18 @@ const TerrainRoutes = express.Router();
 TerrainRoutes.get("/terrains", getAllTerrain);
 TerrainRoutes.get("/terrains/:idUser", getTerrainByIdUser);
 TerrainRoutes.get("/terrains/:id", getOneTerrain);
-TerrainRoutes.post("/terrains", upload.single("image"), createTerrain);
-TerrainRoutes.put("/terrains/:id", upload.single("image"), updateTerrain);
-TerrainRoutes.delete("/terrains/:id", deleteTerrain);
+TerrainRoutes.post(
+  "/terrains",
+  upload.single("image"),
+  verifyToken,
+  createTerrain
+);
+TerrainRoutes.put(
+  "/terrains/:id",
+  upload.single("image"),
+  verifyToken,
+  updateTerrain
+);
+TerrainRoutes.delete("/terrains/:id", verifyToken, deleteTerrain);
 
 export default TerrainRoutes;

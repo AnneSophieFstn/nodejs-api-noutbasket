@@ -64,4 +64,25 @@ async function signIn(req, res) {
   }
 }
 
-export { signIn };
+async function verifyToken(req, res, next) {
+  if (!req.headers.authorization) {
+    return res.status(401).send("Accès refusé.");
+  }
+
+  const token = req.headers.authorization.split(" ")[1];
+
+  if (token) {
+    jwt.verify(token, SECRET_KEY, (err, user) => {
+      if (err) {
+        return res.status(401).json({ message: "Accès refusé." });
+      }
+
+      req.user = user;
+      next();
+    });
+  } else {
+    return res.status(401).json({ message: "Accès refusé." });
+  }
+}
+
+export { signIn, verifyToken };
