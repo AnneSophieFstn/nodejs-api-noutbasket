@@ -90,14 +90,14 @@ async function createMatch(req, res) {
   try {
     // On vérifie si toutes les données requises sont fournies dans la requête
     if (
-      !req.query.name ||
-      !req.query.date ||
-      !req.query.heure ||
-      !req.query.nbrParticipants ||
-      !req.query.type ||
-      !req.query.description ||
-      !req.query.terrain_id ||
-      !req.query.user_id
+      !req.body.name ||
+      !req.body.date ||
+      !req.body.heure ||
+      !req.body.nbrParticipants ||
+      !req.body.type ||
+      !req.body.description ||
+      !req.body.terrain_id ||
+      !req.body.user_id
     ) {
       // Si certaines données sont manquantes, renvoie une réponse avec un statut 400 et un message d'erreur
       return res
@@ -107,14 +107,14 @@ async function createMatch(req, res) {
 
     // Crée un nouveau match en utilisant les données fournies dans la requête
     const createMatch = await Match.create({
-      name: req.query.name,
-      date: req.query.date,
-      heure: req.query.heure,
-      nbrParticipants: req.query.nbrParticipants,
-      type: req.query.type,
-      description: req.query.description,
-      terrain_id: req.query.terrain_id,
-      user_id: req.query.user_id,
+      name: req.body.name,
+      date: req.body.date,
+      heure: req.body.heure,
+      nbrParticipants: req.body.nbrParticipants,
+      type: req.body.type,
+      description: req.body.description,
+      terrain_id: req.body.terrain_id,
+      user_id: req.body.user_id,
     });
 
     // Renvoie une réponse avec un statut 200 et un message
